@@ -1,9 +1,10 @@
 {
   "name": "merge-polygons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Merge non continuous geojson polygons into multiples concave polygons based on polygons distance.",
   "main": "index.js",
   "scripts": {},
+  "bin": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ecadagiani/merge-polygons.git"
