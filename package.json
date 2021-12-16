@@ -1,0 +1,42 @@
+{
+  "name": "merge-polygons",
+  "version": "1.0.0",
+  "description": "Merge non continuous geojson polygons into multiples concave polygons based on polygons distance.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecadagiani/merge-polygons.git"
+  },
+  "keywords": [
+    "merge",
+    "polygons",
+    "polygon",
+    "geojson",
+    "concave",
+    "convex",
+    "dissolve",
+    "combine",
+    "join",
+    "adjacent",
+    "simple",
+    "planar",
+    "shape",
+    "shapes",
+    "distance"
+  ],
+  "author": "Eden Cadagiani <e.cadagiani@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecadagiani/merge-polygons/issues"
+  },
+  "homepage": "https://github.com/ecadagiani/merge-polygons#readme",
+  "dependencies": {
+    "@turf/turf": "^6.5.0",
+    "lodash": "^4.17.21",
+    "yargs": "^17.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.4.1"
+  }
+}
