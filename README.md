@@ -1,4 +1,6 @@
 # merge-polygons
+https://www.npmjs.com/package/merge-polygons
+
 Merge non continuous geojson polygons into multiples concave polygons based on polygons distance.
 
 ![nonMerged](docs/nonMerged.png)
@@ -10,7 +12,7 @@ Merge non continuous geojson polygons into multiples concave polygons based on p
 
 ### Command
 ```bash
-node index -i input.geojson -o output.geojson --maxDistance 4 --maxEdge 6 --units 'kilometers'
+npx merge-polygons -i input.geojson -o output.geojson --maxDistance 4 --maxEdge 6 --units 'kilometers'
 ```
 ```
 Options :
@@ -23,6 +25,11 @@ Options :
                      maxDistance + 1. [number] [default : 5]
   -u, --units        can be degrees, radians, miles, or kilometers [string] [default : "kilometers"]
   -h, --help         Display help [booléen]
+```
+
+### Install
+```bash
+npm -i merge-polygons
 ```
 
 ### Require
