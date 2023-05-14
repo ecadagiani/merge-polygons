@@ -15,9 +15,9 @@ async function main(){
     geoValue.geometry.coordinates = result.geometries[0].coordinates;
   }
   
-  result = turf.simplify(geoValue, { tolerance: 0.001, highQuality: false, mutate: true });
+  geoValue = turf.simplify(geoValue, { tolerance: 0.001, highQuality: false, mutate: true });
   
-  const geoResult = await mergePolygonsByDistance(result, { maxDistance: 3, units: 'kilometers', maxEdge: 4 });
+  const geoResult = await mergePolygonsByDistance(geoValue, { maxDistance: 3, units: 'kilometers', maxEdge: 4 });
   fs.writeFileSync("example_merged.geojson", JSON.stringify(geoResult), { flag: 'w' });
   
 }

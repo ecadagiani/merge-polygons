@@ -1,5 +1,6 @@
 **/*.geojson
 **/.DS_Store
+test/*
 
 
 # Logs

@@ -1,6 +1,6 @@
 const turf = require('@turf/turf');
 const { flattenDepth } = require('lodash');
-const Promise = require('bluebird');
+const BPromise = require('bluebird');
 
 function removePolygonHoles(polygon) {
   return [polygon[0]];
@@ -55,7 +55,7 @@ async function mergePolygonsByDistance({ properties, geometry }, { maxDistance, 
   // recursive function, get an sourcePolygon and find all the polygons from this group.
   // Add the polygons on polygonsGroup array at the groupIndex
   async function addClosenessPolygonToGroup(groupIndex, sourcePolygon) {
-    const { closenessPolygons, distantPolygons } = await Promise.reduce(
+    const { closenessPolygons, distantPolygons } = await BPromise.reduce(
       polygonsToCheck,
       async (accumulator, polygon) => {
         const distance = minDistanceBetweenPolygon(sourcePolygon, polygon, units);
@@ -73,7 +73,7 @@ async function mergePolygonsByDistance({ properties, geometry }, { maxDistance, 
     polygonsGroup[groupIndex].push(...closenessPolygons);
     polygonsToCheck = distantPolygons;
 
-    await Promise.each(
+    await BPromise.each(
       closenessPolygons,
       (closenessPolygon) => addClosenessPolygonToGroup(groupIndex, closenessPolygon),
     );
@@ -102,7 +102,11 @@ async function mergePolygonsByDistance({ properties, geometry }, { maxDistance, 
       // maxEdge cannot be lower than mergePolygonGroupMaxDistance, else create fake polygon with wrong coord
       { units, maxEdge: maxDistance >= maxEdge ? maxDistance + 1 : maxEdge },
     );
-    return polygonsFeature.geometry.coordinates;
+    if (polygonsFeature) return polygonsFeature.geometry.coordinates;
+
+    // if concave fail, use convex
+    const convexPolygon = turf.convex(allPoints);
+    return convexPolygon.geometry.coordinates;
   });
 
   return turf.multiPolygon(simplifiedPolygons, properties);
