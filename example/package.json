@@ -1,0 +1,16 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "example.js",
+  "scripts": {
+    "start": "node example.js"
+  },
+  "author": "Eden Cadagiani",
+  "license": "MIT",
+  "dependencies": {
+    "@turf/turf": "6.5.0",
+    "mapshaper": "0.6.29",
+    "merge-polygons": "^1.0.1"
+  }
+}
