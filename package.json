@@ -35,14 +35,11 @@
   "dependencies": {
     "@turf/turf": "^6.5.0",
     "bluebird": "^3.7.2",
-    "lodash": "^4.17.21",
-    "prettier": "^2.5.1",
-    "prettier-eslint": "^13.0.0",
-    "yargs": "^17.3.0"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^8.4.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.3"
+    "prettier": "^2.5.1",
+    "prettier-eslint": "^13.0.0"
   }
 }
