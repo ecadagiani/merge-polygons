@@ -49,3 +49,15 @@ result = turf.simplify(result, { tolerance: 0.001, highQuality: false, mutate: t
 
 const geoResult = await mergePolygonsByDistance(result, { maxDistance: 5, units: 'kilometers', maxEdge: 6 });
 ```
+
+
+## Example
+**Test from NPX**:
+```bash
+npx merge-polygons -i example/example.geojson -o example/example_merged.geojson --maxdistance 4 --maxEdge 6 --units 'kilometers'
+```
+**Test from code**:
+```
+npm run example
+```
+> launch `example/example.js`, which simplify example_complex.geojson, and merge polygons.
