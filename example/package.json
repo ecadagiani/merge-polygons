@@ -11,6 +11,6 @@
   "dependencies": {
     "@turf/turf": "6.5.0",
     "mapshaper": "0.6.29",
-    "merge-polygons": "^1.0.1"
+    "merge-polygons": "^1.1.3"
   }
 }

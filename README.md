@@ -57,7 +57,7 @@ const geoResult = await mergePolygonsByDistance(result, { maxDistance: 5, units:
 npx merge-polygons -i example/example.geojson -o example/example_merged.geojson --maxdistance 4 --maxEdge 6 --units 'kilometers'
 ```
 **Test from code**:
+```bash
+cd example && npm i && npm start
 ```
-npm run example
-```
-> launch `example/example.js`, which simplify example_complex.geojson, and merge polygons.
+> This will launch `example/example.js`, which simplify example_complex.geojson, and merge polygons.
